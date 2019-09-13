@@ -27,7 +27,7 @@ public class AdminController extends BaseController {
         HttpSession session = request.getSession();
 
         if (name.equals("admin") && passwd.equals("123456")) {
-            session.setAttribute("admin", "admin");
+            session.setAttribute("admin", "杨挺");
             return renderString(response, "admin");
         } else {
             request.setAttribute("loginerror", "用户名或密码错误");
