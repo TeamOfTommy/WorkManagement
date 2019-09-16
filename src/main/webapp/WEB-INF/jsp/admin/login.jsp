@@ -28,11 +28,6 @@
             marin-left: 100px;
         }
 
-        #logijquery-easyuinform {
-            width: 400px;
-            margin: auto;
-        }
-
         .input-group {
             width: 400px;
         }

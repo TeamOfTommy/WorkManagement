@@ -16,4 +16,6 @@
         <!--<property name="location" value="classpath:datasource.properties,classpath:jdbc.properties" />-->
     </bean>
 
+    <import resource="spring-data.xml"/>
+
 </beans>

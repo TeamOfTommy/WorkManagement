@@ -24,7 +24,7 @@
 <body class="easyui-layout" id="layout" style="visibility:hidden;">
 
 <div region="north" id="header">
-    <img src="../img/logo.png" class="logo" />
+    <img src="<%=webRoot%>/img/logo.png" class="logo" />
     <div class="top-btns">
         <span>欢迎您，管理员: ${sessionScope.get("admin")}</span>
         <a href="#" class="easyui-linkbutton" data-options="plain:true,iconCls:'icon-lock'">修改密码</a>
@@ -38,11 +38,10 @@
 
 <div region="west" split="true" title="导航菜单" id="naver">
     <div class="easyui-accordion" fit="true" id="navmenu">
-        <div title="指标体系">
+        <div title="人员管理">
             <ul class="navmenu">
                 <li class="active"><a href="#">首页</a></li>
-                <li><a href="#" data-url="html/page01.html">组织机构管理</a></li>
-                <li><a href="#" data-url="html/page02.html">指标库列表</a></li>
+                <li><a href="#" onclick="addTab('管理员管理','<%=webRoot%>/admin/manage.do', 'icon-user')">管理员人员管理</a></li>
             </ul>
         </div>
         <div title="绩效考核"></div>
@@ -151,6 +150,22 @@
             $("#layout").css("visibility", "visible");
         }, 800);
     });
+
+    function addTab(title, url, img) {
+        if ($('#tt').tabs('exists', title)) {
+            $('#tt').tabs('select', title);
+        } else {
+            var content = '<iframe scrolling="auto" frameborder="0"  src="'
+                + url + '"  style="width:100%;height:100%;"></iframe>';
+            $('#tt').tabs('add', {
+                title : title,
+                content : content,
+                closable : true,
+                iconCls : img
+            });
+        }
+    }
+
 </script>
 </body>
 </html>

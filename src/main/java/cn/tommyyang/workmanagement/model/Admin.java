@@ -21,8 +21,19 @@ public class Admin {
         this.id = id;
     }
 
-    public Admin(String name) {
+    public Admin(String account) {
+        this.account = account;
+    }
+
+    public Admin(int id, String name, String account, String password, String salt, int status, int type, String createTime) {
+        this.id = id;
         this.name = name;
+        this.account = account;
+        this.password = password;
+        this.salt = salt;
+        this.status = status;
+        this.type = type;
+        this.createTime = createTime;
     }
 
     public int getId() {

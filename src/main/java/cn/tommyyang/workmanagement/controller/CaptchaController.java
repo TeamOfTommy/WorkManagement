@@ -1,6 +1,6 @@
 package cn.tommyyang.workmanagement.controller;
 
-import cn.tommyyang.workmanagement.utils.CaptchaUtil;
+import cn.tommyyang.workmanagement.utils.CaptchaUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -27,7 +27,7 @@ public class CaptchaController {
     public void captcha(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException
     {
-        CaptchaUtil.outputCaptcha(request, response);
+        CaptchaUtils.outputCaptcha(request, response);
     }
 
     @RequestMapping(value = "/checkcaptcha.do", method = RequestMethod.POST)

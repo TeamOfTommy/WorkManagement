@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+<mapper namespace="cn.bj.mybatis.models.UserMapper">
+ -->
+<mapper namespace="cn.tommyyang.workmanagement.mapping.admin">
+    <!--<select id="getUserOrders" parameterType="int" resultMap="resultUserOrderList">-->
+    <!--select t_user.id,t_user.username,t_user.age,t_order.id o_id,t_order.orderName from t_user,t_order where t_user.id=t_order.userid and t_user.id=#{id}-->
+    <!--</select>-->
+    <!--<resultMap type="Order" id="resultUserOrderList">-->
+    <!--<id property="id" column="o_id"/>-->
+    <!--<result property="orderName" column="orderName"/>-->
+    <!--<association property="user" javaType="User">-->
+    <!--<id property="id" column="id" />-->
+    <!--<result property="name" column="name" />-->
+    <!--<result property="age" column="age" />-->
+    <!--</association>-->
+    <!--</resultMap>-->
+    <!-- 查询数据 -->
+    <select id="selectAdmin"  resultType="cn.tommyyang.workmanagement.model.Admin">
+        select * from manage where name = #{name}
+    </select>
+
+    <!-- 查询登陆用户数据 -->
+    <select id="checkAdmin"  resultType="cn.tommyyang.workmanagement.model.Admin"  parameterType="cn.tommyyang.workmanagement.model.Admin">
+        select * from manage where account = #{account} and status = 1
+    </select>
+
+    <select id="selectAllAdmin"  resultType="cn.tommyyang.workmanagement.model.Admin">
+        select * from manage where status = 1
+    </select>
+
+    <!-- 增加数据 -->
+    <insert id="addAdmin" parameterType="cn.tommyyang.workmanagement.model.Admin" useGeneratedKeys="true" keyProperty="id">
+        insert into manage(name,account,password,salt,type,create_time)
+        values
+        (#{name}, #{account}, #{password}, #{salt}, #{type}, #{create_time})
+    </insert>
+    <!-- 修改数据 -->
+    <update id="updateAdminPasswd" parameterType="String">
+        update manage set passwd=#{passwd} where name = #{account}
+    </update>
+
+    <!-- 修改数据 -->
+    <update id="updateAdminNickname" parameterType="String">
+        update manage set nickname=#{name} where name = #{account}
+    </update>
+
+    <!-- 删除数据 -->
+    <delete id="deleteAdmin" parameterType="String">
+        update manage set status=0 where name = #{account}
+    </delete>
+</mapper>

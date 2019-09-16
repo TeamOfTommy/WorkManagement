@@ -16,11 +16,11 @@ import java.util.Random;
  * @Author : TommyYang
  * @Time : 2019-09-11 18:01
  * @Software: IntelliJ IDEA
- * @File : CaptchaUtil.java
+ * @File : CaptchaUtils.java
  */
-public class CaptchaUtil {
+public class CaptchaUtils {
 
-    private CaptchaUtil() {
+    private CaptchaUtils() {
     }
 
     /*
