@@ -179,7 +179,13 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
         });
 
-        String json = sBuilder.substring(0, sBuilder.length() - 1);
+        String json;
+        if(total > 0) {
+            json = sBuilder.substring(0, sBuilder.length() - 1);
+        } else {
+            json = sBuilder.toString();
+        }
+
         return json + "]}";
     }
 
