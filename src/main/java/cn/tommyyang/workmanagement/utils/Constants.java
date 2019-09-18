@@ -10,4 +10,6 @@ public class Constants {
 
     public static final String WEB_ROOT = "http://localhost:8080/WorkManagement_war_exploded";
 
+    public static final String FILE_DIR = "/Users/tommy/Documents/tmp";
+
 }

@@ -29,22 +29,26 @@ public class BaseController {
         response.getWriter().close();
     }
 
-//    protected void download(HttpServletResponse response, File file) throws IOException {
-//        //返回数据
-//        response.setCharacterEncoding("gbk");
-//        response.setContentType("multipart/form-data");
-//        response.setHeader("Content-Disposition", "attachment;filename=" + file.getName());
-//        response.addHeader("Content-Length", String.valueOf(file.length()));
+    protected void download(HttpServletResponse response, File file, String contentType) throws IOException {
+        if (contentType.equals("")) {
+            contentType = "multipart/form-data";
+        }
+        //返回数据
+        response.reset();
+        response.setCharacterEncoding("utf-8");
+        response.setContentType(contentType);
+        response.setHeader("Content-Disposition", "attachment; filename=" + file.getName());
+        response.addHeader("Content-Length", String.valueOf(file.length()));
 //        response.setContentType(ContentType.APPLICATION_OCTET_STREAM.getMimeType());
-//        FileInputStream inputStream = new FileInputStream(file);
-//        OutputStream outputStream = response.getOutputStream();
-//        byte[] bytes = new byte[2048];
-//        int length;
-//        while ((length = inputStream.read(bytes)) > 0) {
-//            outputStream.write(bytes, 0, length);
-//        }
-//        outputStream.close();
-//        inputStream.close();
-//    }
+        FileInputStream inputStream = new FileInputStream(file);
+        OutputStream outputStream = response.getOutputStream();
+        byte[] bytes = new byte[2048];
+        int length;
+        while ((length = inputStream.read(bytes)) > 0) {
+            outputStream.write(bytes, 0, length);
+        }
+        outputStream.close();
+        inputStream.close();
+    }
 
 }

@@ -4,7 +4,41 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="cn.tommyyang.workmanagement.mapping.competition">
-    <select id="selectAllCompetition"  resultType="cn.tommyyang.workmanagement.model.Competition">
-        select * from competition
+    <select id="selectAllCompetition" resultType="cn.tommyyang.workmanagement.model.Competition">
+        select id, name, birthday birth, headimg, nationality,
+                sex, level, project, music_url musicUrl, division,
+                `group`, instrument, address, phone, teacher, mobile, type,
+                order_no orderNo, pid, order_amount orderAmount,
+                pay_status payStatus, create_time createTime
+        from competition
+    </select>
+
+    <select id="selectByCondition" resultType="cn.tommyyang.workmanagement.model.Competition"
+            parameterType="cn.tommyyang.workmanagement.model.Competition">
+        select id, name, birthday birth, headimg, nationality,
+        sex, level, project, music_url musicUrl, division,
+        `group`, instrument, address, phone, teacher, mobile, type,
+        order_no orderNo, pid, order_amount orderAmount,
+        pay_status payStatus, create_time createTime
+        from competition
+        <where>
+            id > 0
+            <if test="nationality != 'all'">
+                and nationality = #{nationality}
+            </if>
+
+            <if test="sex != 'all'">
+                and sex = #{sex}
+            </if>
+
+            <if test="division != ''">
+                and division = #{division}
+            </if>
+
+            <if test="group != ''">
+                and `group` = #{group}
+            </if>
+        </where>
+
     </select>
 </mapper>

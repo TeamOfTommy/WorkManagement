@@ -5,6 +5,10 @@ body {font-family:"microsoft yahei";}
 ul {list-style:none;margin:0px;padding:0px;}
 a {text-decoration:none;outline:none;}
 
+.easyui-dg{
+    margin-bottom: 1px;
+}
+
 .datagrid-sort-asc .datagrid-sort-icon,
 .datagrid-sort-desc .datagrid-sort-icon {padding:0px;}
 
@@ -55,7 +59,7 @@ a {text-decoration:none;outline:none;}
 #footer {height:35px;line-height:28px;text-align:center;font-weight:bold;color:#1542a4;background:#d2e0f2;overflow:hidden;}
 
 .toolbar {}
-.toolbar .search-div {padding:10px 0px;background:#fff;}
+.search-div {padding:10px 0px;background:#fff;}
 .toolbar .ctrl-div {padding:3px 0px;border-top:1px solid #ddd;}
 .toolbar .search-div label {margin-left:10px;vertical-align:middle;}
 .toolbar .search-div .easyui-textbox,

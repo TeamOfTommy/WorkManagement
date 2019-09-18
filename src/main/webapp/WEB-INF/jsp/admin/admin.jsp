@@ -44,14 +44,18 @@
                 <li><a href="#" onclick="addTab('管理员管理','<%=webRoot%>/admin/manage.do', 'icon-user')">管理员人员管理</a></li>
             </ul>
         </div>
-        <div title="绩效考核"></div>
-        <div title="报表管理"></div>
-        <div title="系统管理"></div>
-        <div title="组件示例">
+        <div title="项目管理">
             <ul class="navmenu">
-                <li><a href="#" data-url="html/demo01.html">锁定行和列</a></li>
+                <li><a href="#" onclick="addTab('项目人员管理','<%=webRoot%>/competition/manage.do', 'icon-user')">项目人员管理</a></li>
             </ul>
         </div>
+        <%--<div title="报表管理"></div>--%>
+        <%--<div title="系统管理"></div>--%>
+        <%--<div title="组件示例">--%>
+            <%--<ul class="navmenu">--%>
+                <%--<li><a href="#" data-url="html/demo01.html">锁定行和列</a></li>--%>
+            <%--</ul>--%>
+        <%--</div>--%>
     </div>
 </div>
 

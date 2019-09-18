@@ -16,6 +16,8 @@ public class Competition {
     private String sex;
     private String level;
     private String project;
+    private String musicUrl;
+    private String division;
     private String group;
     private String instrument;
     private String address;
@@ -29,12 +31,40 @@ public class Competition {
     private int payStatus;
     private String createTime;
 
+    public Competition() {
+    }
+
     public Competition(int id) {
         this.id = id;
     }
 
     public Competition(String name) {
         this.name = name;
+    }
+
+    public Competition(int id, String name, String birth, String headImg, String nationality, String sex, String level, String project, String musicUrl, String division, String group, String instrument, String address, String phone, String teacher, String mobile, String type, String orderNo, int pid, float orderAmount, int payStatus, String createTime) {
+        this.id = id;
+        this.name = name;
+        this.birth = birth;
+        this.headImg = headImg;
+        this.nationality = nationality;
+        this.sex = sex;
+        this.level = level;
+        this.project = project;
+        this.musicUrl = musicUrl;
+        this.division = division;
+        this.group = group;
+        this.instrument = instrument;
+        this.address = address;
+        this.phone = phone;
+        this.teacher = teacher;
+        this.mobile = mobile;
+        this.type = type;
+        this.orderNo = orderNo;
+        this.pid = pid;
+        this.orderAmount = orderAmount;
+        this.payStatus = payStatus;
+        this.createTime = createTime;
     }
 
     public int getId() {
@@ -99,6 +129,22 @@ public class Competition {
 
     public void setProject(String project) {
         this.project = project;
+    }
+
+    public String getMusicUrl() {
+        return musicUrl;
+    }
+
+    public void setMusicUrl(String musicUrl) {
+        this.musicUrl = musicUrl;
+    }
+
+    public String getDivision() {
+        return division;
+    }
+
+    public void setDivision(String division) {
+        this.division = division;
     }
 
     public String getGroup() {
@@ -208,6 +254,8 @@ public class Competition {
                 ", sex='" + sex + '\'' +
                 ", level='" + level + '\'' +
                 ", project='" + project + '\'' +
+                ", musicUrl='" + musicUrl + '\'' +
+                ", division='" + division + '\'' +
                 ", group='" + group + '\'' +
                 ", instrument='" + instrument + '\'' +
                 ", address='" + address + '\'' +

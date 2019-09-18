@@ -35,8 +35,8 @@ public class AdminServiceImpl implements IAdminService {
             List<Admin> admins = this.adminDao.get();
             return this.listToJson(admins, page, rows);
         } catch (Exception e) {
-            LOG.info().strField("event", "get-json-data").strField("error", e.getMessage())
-                    .exception("exception", e).log();
+            LOG.info().strField("event", "get-admin-data").strField("error", e.getMessage())
+                    .exception("\nexception:\n", e).log();
         }
         return "";
     }
@@ -52,7 +52,7 @@ public class AdminServiceImpl implements IAdminService {
             }
         }catch (Exception e) {
             LOG.info().strField("event", "check-admin").strField("error", e.getMessage())
-                    .exception("exception", e).log();
+                    .exception("\nexception:\n", e).log();
         }
         return null;
     }
@@ -71,7 +71,7 @@ public class AdminServiceImpl implements IAdminService {
             return this.adminDao.addAdmin(admin);
         } catch (Exception e) {
             LOG.info().strField("event", "add-admin").strField("error", e.getMessage())
-                    .exception("exception", e).log();
+                    .exception("\nexception:\n", e).log();
         }
 
         return 0;
@@ -79,8 +79,7 @@ public class AdminServiceImpl implements IAdminService {
 
 
     private String listToJson(List<Admin> admins, int page, int rows) {
-        int total = 0;
-        total = admins.size();
+        int total = admins.size();
         int start = (page - 1) * rows;
         int end = page * rows;
         int currentEnd = end <= total ? end : total;

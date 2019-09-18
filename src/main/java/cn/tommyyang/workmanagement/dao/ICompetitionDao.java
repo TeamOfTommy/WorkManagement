@@ -14,4 +14,6 @@ public interface ICompetitionDao {
 
     List<Competition> get();
 
+    List<Competition> get(Competition competition);
+
 }

@@ -80,8 +80,8 @@ public class AdminController extends BaseController {
         try {
             this.writeResponseContent(response, adminService.getJson(page, rows));
         } catch (IOException e) {
-            LOG.info().strField("event", "getData").strField("error", e.getMessage())
-                    .exception("exception", e).log();
+            LOG.info().strField("event", "get-admin-data").strField("error", e.getMessage())
+                    .exception("\nexception:\n", e).log();
         }
     }
 

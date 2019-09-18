@@ -16,10 +16,20 @@ import java.util.List;
  */
 @Repository("competitionDao")
 public class CompetitionDaoImpl extends BaseDao implements ICompetitionDao {
+
     @Override
     public List<Competition> get() {
         try (SqlSession session = this.getSqlSessionFactory().openSession()) {
             List<Competition> competitions = session.selectList("cn.tommyyang.workmanagement.mapping.competition.selectAllCompetition");
+            session.commit();
+            return competitions;
+        }
+    }
+
+    @Override
+    public List<Competition> get(Competition competition) {
+        try (SqlSession session = this.getSqlSessionFactory().openSession()) {
+            List<Competition> competitions = session.selectList("cn.tommyyang.workmanagement.mapping.competition.selectByCondition", competition);
             session.commit();
             return competitions;
         }
