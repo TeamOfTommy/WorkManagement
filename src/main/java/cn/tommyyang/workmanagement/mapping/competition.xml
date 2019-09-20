@@ -6,7 +6,7 @@
 <mapper namespace="cn.tommyyang.workmanagement.mapping.competition">
     <select id="selectAllCompetition" resultType="cn.tommyyang.workmanagement.model.Competition">
         select id, name, birthday birth, headimg, nationality,
-                sex, level, project, music_url musicUrl, division,
+                sex, level, project, org, music_url musicUrl, division,
                 `group`, instrument, address, phone, teacher, mobile, type,
                 order_no orderNo, pid, order_amount orderAmount,
                 pay_status payStatus, create_time createTime
@@ -16,7 +16,7 @@
     <select id="selectByCondition" resultType="cn.tommyyang.workmanagement.model.Competition"
             parameterType="cn.tommyyang.workmanagement.model.Competition">
         select id, name, birthday birth, headimg, nationality,
-        sex, level, project, music_url musicUrl, division,
+        sex, level, project, org, music_url musicUrl, division,
         `group`, instrument, address, phone, teacher, mobile, type,
         order_no orderNo, pid, order_amount orderAmount,
         pay_status payStatus, create_time createTime

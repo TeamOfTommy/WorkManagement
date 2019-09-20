@@ -42,9 +42,13 @@ public class CompetitionController extends BaseController {
                         @RequestParam(value = "sex") String sex,
                         @RequestParam(value = "division") String division,
                         @RequestParam(value = "group") String group,
+                        @RequestParam(value = "type") int type,
                         @RequestParam(value = "page") int page,
                         @RequestParam(value = "rows") int rows) {
         try {
+            if (type == 1 && page > 1) {
+                page = 1;
+            }
             this.writeResponseContent(response, competitionService.getJson(page, rows, nationality, sex, division, group));
         } catch (IOException e) {
             LOG.info().strField("event", "get-competition-data").strField("error", e.getMessage())

@@ -16,6 +16,7 @@ public class Competition {
     private String sex;
     private String level;
     private String project;
+    private String org;
     private String musicUrl;
     private String division;
     private String group;
@@ -42,7 +43,7 @@ public class Competition {
         this.name = name;
     }
 
-    public Competition(int id, String name, String birth, String headImg, String nationality, String sex, String level, String project, String musicUrl, String division, String group, String instrument, String address, String phone, String teacher, String mobile, String type, String orderNo, int pid, float orderAmount, int payStatus, String createTime) {
+    public Competition(int id, String name, String birth, String headImg, String nationality, String sex, String level, String project, String org, String musicUrl, String division, String group, String instrument, String address, String phone, String teacher, String mobile, String type, String orderNo, int pid, float orderAmount, int payStatus, String createTime) {
         this.id = id;
         this.name = name;
         this.birth = birth;
@@ -51,6 +52,7 @@ public class Competition {
         this.sex = sex;
         this.level = level;
         this.project = project;
+        this.org = org;
         this.musicUrl = musicUrl;
         this.division = division;
         this.group = group;
@@ -129,6 +131,14 @@ public class Competition {
 
     public void setProject(String project) {
         this.project = project;
+    }
+
+    public String getOrg() {
+        return org;
+    }
+
+    public void setOrg(String org) {
+        this.org = org;
     }
 
     public String getMusicUrl() {

@@ -15,10 +15,8 @@ import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.sql.Timestamp;
 import java.time.Instant;
-import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.IntStream;
@@ -92,6 +90,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
                         row.createCell(cellNum++).setCellValue(c.getSex());
                         row.createCell(cellNum++).setCellValue(c.getLevel());
                         row.createCell(cellNum++).setCellValue(c.getProject());
+                        row.createCell(cellNum++).setCellValue(c.getOrg());
                         row.createCell(cellNum++).setCellValue(c.getMusicUrl());
                         row.createCell(cellNum++).setCellValue(c.getDivision());
                         row.createCell(cellNum++).setCellValue(c.getGroup());
@@ -162,6 +161,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
                     .append("\"sex\":").append(String.format("\"%s\"", c.getSex())).append(",")
                     .append("\"level\":").append(String.format("\"%s\"", c.getLevel())).append(",")
                     .append("\"project\":").append(String.format("\"%s\"", c.getProject())).append(",")
+                    .append("\"org\":").append(String.format("\"%s\"", c.getOrg())).append(",")
                     .append("\"musicurl\":").append(String.format("\"%s\"", c.getMusicUrl())).append(",")
                     .append("\"division\":").append(String.format("\"%s\"", c.getDivision())).append(",")
                     .append("\"group\":").append(String.format("\"%s\"", c.getGroup())).append(",")
@@ -191,7 +191,7 @@ public class CompetitionServiceImpl implements ICompetitionService {
 
     private static String[] getHeader() {
         return new String[]{
-                "姓名", "出生日期", "头像", "国籍", "性别", "项目水平", "参赛项目",
+                "姓名", "出生日期", "头像", "国籍", "性别", "项目水平", "参赛项目", "选送单位",
                 "作品音乐路径", "赛区", "分组", "使用的乐器", "联系地址", "联系电话",
                 "指导老师", "指导老师电话", "类型", "订单号", "报名类型", "订单金额",
                 "订单状态", "创建时间"

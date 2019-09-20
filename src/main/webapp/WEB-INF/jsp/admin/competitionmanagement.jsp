@@ -203,7 +203,7 @@
         method: 'post',
         queryParams: {
             nationality: "all", sex: "all",
-            division: "", group: ""
+            division: "", group: "", type: 0
         },
         onSelect: function () {
             $('#btn_remove').linkbutton('enable');
@@ -243,6 +243,10 @@
         }, {
             field: 'project',
             title: '项目名称',
+            width: 20
+        }, {
+            field: 'org',
+            title: '选送单位',
             width: 20
         }, {
             field: 'musicurl',
@@ -316,10 +320,10 @@
             group = "";
         }
 
-        reloadgrid(nationality, sex, division, group);
+        reloadgrid(nationality, sex, division, group, 1);
     });
 
-    function reloadgrid(nationality, sex, division, group) {
+    function reloadgrid(nationality, sex, division, group, type) {
         // 查询参数直接添加在url中
         var url = "<%=webRoot%>/competition/getdata.do";
         $('#dg').datagrid('options').url = url;
@@ -329,6 +333,7 @@
         queryParams.sex = sex;
         queryParams.division = division;
         queryParams.group = group;
+        queryParams.type = type;
         $('#dg').datagrid('options').queryParams = queryParams;
         $("#dg").datagrid('reload', null);
     }

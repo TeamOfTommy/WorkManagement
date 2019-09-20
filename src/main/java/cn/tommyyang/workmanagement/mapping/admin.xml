@@ -25,11 +25,11 @@
 
     <!-- 查询登陆用户数据 -->
     <select id="checkAdmin"  resultType="cn.tommyyang.workmanagement.model.Admin"  parameterType="cn.tommyyang.workmanagement.model.Admin">
-        select id, name, account, password, salt, type, create_time as createTime from manage where account = #{account} and status = 1
+        select * from manage where account = #{account} and status = 1
     </select>
 
     <select id="selectAllAdmin"  resultType="cn.tommyyang.workmanagement.model.Admin">
-        select id, name, account, password, salt, type, create_time as createTime from manage where status = 1
+        select * from manage where status = 1
     </select>
 
     <!-- 增加数据 -->

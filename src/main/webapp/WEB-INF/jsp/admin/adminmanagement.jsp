@@ -66,9 +66,9 @@
             iconCls : 'icon-add',
             id : 'btn-add',
             text : '添加',
-            handler : function() {
-                window.location.href="<%=webRoot%>/admin/goadd.do";
-            }
+            <%--handler : function() {--%>
+                <%--window.location.href="<%=webRoot%>/admin/goadd.do";--%>
+            <%--}--%>
         }, '-', {
             iconCls : 'icon-remove',
             id : 'btn_remove',
