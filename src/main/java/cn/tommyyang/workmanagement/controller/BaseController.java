@@ -1,7 +1,5 @@
 package cn.tommyyang.workmanagement.controller;
 
-import org.apache.http.entity.ContentType;
-
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
